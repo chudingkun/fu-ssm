@@ -8,7 +8,7 @@
        <script type="text/javascript">
            $(document).ready(function(){
                $.ajax({
-                   url:"/show/seat?floor=2",
+                   url:"/show/seat",
                    success:function (data) {
                             var html="";
                             console.log(data);
@@ -24,26 +24,124 @@
 
                    }
                })
-           })
-           $("#seattable3").click(function () {
-               $.ajax({
-                   url:"/show/seat?floor=3",
-                   success:function (data) {
-                       var html="";
-                       console.log(data);
-                       for(var i=0;i<data.length;i++){
-                           html+=" <tr class=\"info\">"+
-                               "<td>"+data[i].floor+"</td>"+
-                               "<td>"+data[i].wz+"</td>"+
-                               "<td>"+data[i].seatnum+"</td>"+
-                               "<td>"+data[i].temp+"</td>"+
-                               "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
-                       }
-                       $("#seattable").html(html);
+               $("#seattable3").click(function () {
+                   $.ajax({
+                       url:"/show/seat3",
+                       success:function (data) {
+                           var html="";
+                           console.log(data);
+                           for(var i=0;i<data.length;i++){
+                               html+=" <tr class=\"info\">"+
+                                   "<td>"+data[i].floor+"</td>"+
+                                   "<td>"+data[i].wz+"</td>"+
+                                   "<td>"+data[i].seatnum+"</td>"+
+                                   "<td>"+data[i].temp+"</td>"+
+                                   "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
+                           }
+                           $("#seattable").html(html);
 
-                   }
+                       }
+                   })
                })
+               $("#seattable4").click(function () {
+                   $.ajax({
+                       url:"/show/seat4",
+                       success:function (data) {
+                           var html="";
+                           console.log(data);
+                           for(var i=0;i<data.length;i++){
+                               html+=" <tr class=\"info\">"+
+                                   "<td>"+data[i].floor+"</td>"+
+                                   "<td>"+data[i].wz+"</td>"+
+                                   "<td>"+data[i].seatnum+"</td>"+
+                                   "<td>"+data[i].temp+"</td>"+
+                                   "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
+                           }
+                           $("#seattable").html(html);
+
+                       }
+                   })
+               })
+               $("#seattable5").click(function () {
+                   $.ajax({
+                       url:"/show/seat5",
+                       success:function (data) {
+                           var html="";
+                           console.log(data);
+                           for(var i=0;i<data.length;i++){
+                               html+=" <tr class=\"info\">"+
+                                   "<td>"+data[i].floor+"</td>"+
+                                   "<td>"+data[i].wz+"</td>"+
+                                   "<td>"+data[i].seatnum+"</td>"+
+                                   "<td>"+data[i].temp+"</td>"+
+                                   "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
+                           }
+                           $("#seattable").html(html);
+
+                       }
+                   })
+               })
+               $("#seattable6").click(function () {
+                   $.ajax({
+                       url:"/show/seat6",
+                       success:function (data) {
+                           var html="";
+                           console.log(data);
+                           for(var i=0;i<data.length;i++){
+                               html+=" <tr class=\"info\">"+
+                                   "<td>"+data[i].floor+"</td>"+
+                                   "<td>"+data[i].wz+"</td>"+
+                                   "<td>"+data[i].seatnum+"</td>"+
+                                   "<td>"+data[i].temp+"</td>"+
+                                   "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
+                           }
+                           $("#seattable").html(html);
+
+                       }
+                   })
+               })
+               $("#seattable7").click(function () {
+                   $.ajax({
+                       url:"/show/seat7",
+                       success:function (data) {
+                           var html="";
+                           console.log(data);
+                           for(var i=0;i<data.length;i++){
+                               html+=" <tr class=\"info\">"+
+                                   "<td>"+data[i].floor+"</td>"+
+                                   "<td>"+data[i].wz+"</td>"+
+                                   "<td>"+data[i].seatnum+"</td>"+
+                                   "<td>"+data[i].temp+"</td>"+
+                                   "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
+                           }
+                           $("#seattable").html(html);
+
+                       }
+                   })
+               })
+               $("#seattable8").click(function () {
+                   $.ajax({
+                       url:"/show/seat8",
+                       success:function (data) {
+                           var html="";
+                           console.log(data);
+                           for(var i=0;i<data.length;i++){
+                               html+=" <tr class=\"info\">"+
+                                   "<td>"+data[i].floor+"</td>"+
+                                   "<td>"+data[i].wz+"</td>"+
+                                   "<td>"+data[i].seatnum+"</td>"+
+                                   "<td>"+data[i].temp+"</td>"+
+                                   "<td>"+"<a href=\"/myappoint/ap?seatnum="+data[i].seatnum+"\">预约</a>"+"</td>"
+                           }
+                           $("#seattable").html(html);
+
+                       }
+                   })
+               })
+
+
            })
+
        </script>
 
 </head>
@@ -132,7 +230,7 @@
                             <a href="#">首页</a>
                         </li>
                         <li>
-                            <a href="#">预约中心</a>
+                            <a href="/jsp/appoint.jsp">预约中心</a>
                         </li>
                         <li>
                             <a href="#">我的预约</a>
@@ -184,7 +282,7 @@
                             <div class="tabbable" id="tabs-773654">
                                 <ul class="nav nav-tabs">
                                     <li class="active">
-                                        <a data-toggle="tab" id="seattable2">二层</a>
+                                        <a data-toggle="tab" id="seattable2" href="/jsp/appoint.jsp">二层</a>
                                     </li>
                                     <li>
                                         <a data-toggle="tab"  id="seattable3">三层</a>
@@ -193,10 +291,10 @@
                                         <a data-toggle="tab" id="seattable4">四层</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab"id="seattable5" >五层</a>
+                                        <a data-toggle="tab" id="seattable5" >五层</a>
                                     </li>
                                     <li>
-                                        <a data-toggle="tab"id="seattable6" >六层</a>
+                                        <a data-toggle="tab" id="seattable6" >六层</a>
                                     </li>
                                     <li>
                                         <a data-toggle="tab" id="seattable7">七层</a>

@@ -18,13 +18,6 @@ public class Teacher {
                 '}';
     }
 
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
 
     public Teacher(int floor, String name, String time, String temp, String tel) {
         this.floor = floor;
@@ -67,5 +60,13 @@ public class Teacher {
 
     public void setTemp(String temp) {
         this.temp = temp;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 }

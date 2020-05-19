@@ -8,6 +8,6 @@ public interface AppointMapper {
 
     List<Seat> getSeat(int floor);
 
-    int setappoint();
+    //int setappoint();
 
 }

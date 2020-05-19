@@ -6,6 +6,7 @@ import com.fuhao.pojo.Seat;
 import java.util.List;
 
 public class AppointServiceImpl implements AppointService {
+
     private AppointMapper appointMapper;
 
     public void setAppointMapper(AppointMapper appointMapper) {

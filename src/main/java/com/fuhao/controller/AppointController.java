@@ -15,39 +15,49 @@ public class AppointController {
     @Qualifier("AppointServiceImpl")
     private AppointService appointService;
 
-    @RequestMapping("/show/seat?floor=2")
-    public List<Seat>  appoint2(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat")
+    public List<Seat>  appoint2(){
+        List<Seat> seatList = appointService.getSeat(2);
+        System.out.println(seatList);
         return seatList;
     }
-    @RequestMapping("/show/seat?floor=3")
-    public List<Seat>  appoint3(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat3")
+    public List<Seat>  appoint3(){
+        List<Seat> seatList = appointService.getSeat(3);
+        System.out.println(seatList);
         return seatList;
     }
-    @RequestMapping("/show/seat?floor=4")
-    public List<Seat>  appoint4(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat4")
+    public List<Seat>  appoint4(){
+        List<Seat> seatList = appointService.getSeat(4);
+        System.out.println(seatList);
         return seatList;
     }
-    @RequestMapping("/show/seat?floor=5")
-    public List<Seat>  appoint5(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat5")
+    public List<Seat>  appoint5(){
+        List<Seat> seatList = appointService.getSeat(5);
+        System.out.println(seatList);
         return seatList;
     }
-    @RequestMapping("/show/seat?floor=6")
-    public List<Seat>  appoint6(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat6")
+    public List<Seat>  appoint6(){
+        List<Seat> seatList = appointService.getSeat(6);
+        System.out.println(seatList);
         return seatList;
     }
-    @RequestMapping("/show/seat?floor=7")
-    public List<Seat>  appoint7(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat7")
+    public List<Seat>  appoint7(){
+        List<Seat> seatList = appointService.getSeat(7);
+        System.out.println(seatList);
         return seatList;
     }
-    @RequestMapping("/show/seat?floor=8")
-    public List<Seat>  appoint8(int floor){
-        List<Seat> seatList = appointService.getSeat(floor);
+    @RequestMapping("/show/seat8")
+    public List<Seat>  appoint8(){
+        List<Seat> seatList = appointService.getSeat(8);
+        if(seatList==null){
+
+        }
+        System.out.println(seatList);
         return seatList;
     }
 }
