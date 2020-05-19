@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fuhao.dao.MessageMapper">
+    <select id="getMessageList" resultType="com.fuhao.pojo.Message">
+        select * from libseatmanage.message;
+    </select>
+    <select id="getNewsList" resultType="com.fuhao.pojo.News">
+        select * from  libseatmanage.news
+    </select>
+    <select id="getTeacherList" resultType="com.fuhao.pojo.Teacher">
+        select * from libseatmanage.teacher;
+    </select>
+</mapper>
