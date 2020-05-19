@@ -60,7 +60,7 @@
                   <li class="divider-vertical">
                   </li>
                   <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">系统设置<strong class="caret"></strong></a>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">欢迎登陆！<p >${realname}</p><strong class="caret"></strong></a>
                     <ul class="dropdown-menu">
                       <li>
                         <a href="#">下拉导航1</a>

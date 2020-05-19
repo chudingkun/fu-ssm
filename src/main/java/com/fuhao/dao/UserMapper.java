@@ -1,19 +1,10 @@
 package com.fuhao.dao;
 
-import com.fuhao.pojo.User;
+import com.fuhao.pojo.Student;
 
 import java.util.List;
 
 public interface UserMapper {
-    List<User> getUserList();
 
-    User getUserById(int id);
-
-    int addUser(User user);
-
-    int deleteUser(int id);
-
-    int updataUser(User user);
-
-    User login(User user);
+    Student login(Student student);
 }

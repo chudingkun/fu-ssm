@@ -1142,7 +1142,7 @@
     </column>
     <column id="289" parent="280" name="num">
       <Position>4</Position>
-      <DataType>int|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="290" parent="280" name="wz">
@@ -1188,7 +1188,7 @@
     </column>
     <column id="297" parent="283" name="num">
       <Position>1</Position>
-      <DataType>int|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1201,7 +1201,6 @@
     <column id="299" parent="283" name="realname">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="300" parent="283" name="sex">
@@ -1215,7 +1214,7 @@
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="283" name="class">
+    <column id="302" parent="283" name="classname">
       <Position>6</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
@@ -1228,7 +1227,6 @@
     <column id="304" parent="283" name="seatnum">
       <Position>8</Position>
       <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="305" parent="283" name="PRIMARY">

@@ -1,7 +1,7 @@
 package com.fuhao.service;
 
 import com.fuhao.dao.UserMapper;
-import com.fuhao.pojo.User;
+import com.fuhao.pojo.Student;
 
 import java.util.List;
 
@@ -15,27 +15,7 @@ public class UserServiceImpl implements UserService {
         this.userMapper = userMapper;
     }
 
-    public List<User> getUserList() {
-       return userMapper.getUserList();
-    }
-
-    public User getUserById(int id) {
-        return userMapper.getUserById(id);
-    }
-
-    public int addUser(User user) {
-        return userMapper.addUser(user);
-    }
-
-    public int deleteUser(int id) {
-        return userMapper.deleteUser(id);
-    }
-
-    public int updataUser(User user) {
-        return userMapper.updataUser(user);
-    }
-
-    public User login(User user) {
-        return userMapper.login(user);
+    public Student login(Student student) {
+        return userMapper.login(student);
     }
 }

@@ -2,12 +2,19 @@ package com.fuhao.controller;
 
 import com.fuhao.pojo.Seat;
 import com.fuhao.service.AppointService;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class AppointController {
@@ -15,6 +22,7 @@ public class AppointController {
     @Qualifier("AppointServiceImpl")
     private AppointService appointService;
 
+    //展示座位
     @RequestMapping("/show/seat")
     public List<Seat>  appoint2(){
         List<Seat> seatList = appointService.getSeat(2);
@@ -59,5 +67,20 @@ public class AppointController {
         }
         System.out.println(seatList);
         return seatList;
+    }
+
+
+    //预约请求
+    @RequestMapping("/myappoint/ap")
+    public String appointseat(String seatnum, HttpServletRequest request, HttpServletResponse response){
+        HttpSession session =request.getSession();
+        String num= (String) session.getAttribute("num");
+        Map map =new HashMap();
+        map.put("num",num);
+        map.put("seat",seatnum);
+        appointService.seatappoint(map);
+
+        return "redirect:/jsp/appoint.jsp";
+
     }
 }

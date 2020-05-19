@@ -3,8 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fuhao.dao.AppointMapper">
+
     <select id="getSeat"  parameterType="int" resultType="com.fuhao.pojo.Seat">
         select * from libseatmanage.libseat where isnull(num) and floor=#{floor};
     </select>
 
+    <update id="seatappoint" parameterType="map" >
+        update libseatmanage.libseat set temp="在座" and num=#{num} where seatnum=#{seatnum}
+    </update>
+
+    <update id="seatsave" parameterType="map" >
+        update libseatmanage.student set seatnum=#{seat} where num=#{num}
+    </update>
 </mapper>

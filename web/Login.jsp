@@ -33,7 +33,7 @@
                         <div class="content">
                             <form method="post" action="/ssm/login" class="form-validate" id="loginFrom">
                                 <div class="form-group">
-                                    <input id="login-username" type="text" name="name" required data-msg="请输入用户名" placeholder="用户名" value="admin" class="input-material">
+                                    <input id="login-username" type="text" name="num" required data-msg="请输入用户名" placeholder="用户名" value="学号" class="input-material">
                                 </div>
                                 <div class="form-group">
                                     <input id="login-password" type="password" name="password" required data-msg="请输入密码" placeholder="密码" class="input-material">

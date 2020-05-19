@@ -53,7 +53,11 @@
 
     <!-- 扫描service相关的bean -->
     <context:component-scan base-package="com.fuhao.service"/>
+
+
     <!--UserServiceImpl注入到IOC容器中-->
+
+
     <bean id="UserServiceImpl" class="com.fuhao.service.UserServiceImpl">
         <property name="userMapper" ref="userMapper"/>
     </bean>
@@ -63,6 +67,8 @@
     <bean id="AppointServiceImpl" class="com.fuhao.service.AppointServiceImpl">
         <property name="appointMapper" ref="appointMapper"/>
     </bean>
+
+
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
