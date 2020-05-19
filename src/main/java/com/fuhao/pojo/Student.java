@@ -10,6 +10,20 @@ public class Student {
     private  String yuanxi;
     private  String seatnum;
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "num='" + num + '\'' +
+                ", password='" + password + '\'' +
+                ", realname='" + realname + '\'' +
+                ", sex='" + sex + '\'' +
+                ", tel='" + tel + '\'' +
+                ", classname='" + classname + '\'' +
+                ", yuanxi='" + yuanxi + '\'' +
+                ", seatnum='" + seatnum + '\'' +
+                '}';
+    }
+
     public String getNum() {
         return num;
     }

@@ -9,7 +9,7 @@
     </select>
 
     <update id="seatappoint" parameterType="map" >
-        update libseatmanage.libseat set temp="在座" and num=#{num} where seatnum=#{seatnum}
+        update libseatmanage.libseat set temp="在座",num=#{num} where seatnum=#{seat}
     </update>
 
     <update id="seatsave" parameterType="map" >

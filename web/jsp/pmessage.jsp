@@ -10,6 +10,23 @@
 <head>
     <title>Title</title>
     <link href="https://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajax({
+                url:"/show/pmsg",
+                success:function (data) {
+                    $("#num").val(data.num)
+                    $("#realname").val(data.realname)
+                    $("#ppassword").val(data.password)
+                    $("#psex").val(data.sex)
+                    $("#ptel").val(data.tel)
+                    $("#pclassname").val(data.classname)
+                    $("#pyuanxi").val(data.yunaxi)
+                }
+            })
+        })
+    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -92,16 +109,16 @@
                 <div class="span2">
                     <ul class="nav nav-list well">
                         <li class="nav-header">
-                            <a href="#">首页</a>
+                            <a href="/jsp/index.jsp">首页</a>
                         </li>
                         <li>
-                            <a href="#">预约中心</a>
+                            <a href="/jsp/appoint.jsp">预约中心</a>
                         </li>
                         <li>
-                            <a href="#">我的预约</a>
+                            <a href="/myappoint.jsp">我的预约</a>
                         </li>
                         <li>
-                            <a href="#">资料</a>
+                            <a href="/jsp/pmessage.jsp">资料</a>
                         </li>
                         <li>
                             <a href="#">消息</a>
@@ -143,13 +160,14 @@
                                 <div class="span9">
                                     <blockquote>
                                         ID：
-                                        <p style="font-weight: 900">16114284
+                                        <p style="font-weight: 900;color:cornflowerblue" id="num">
+
                                         </p> <small> <cite></cite></small>
                                     </blockquote>
                                     <blockquote>
                                         姓名：
-                                        <p style="font-weight: 900">
-                                            付浩
+                                        <p style="font-weight: 900;color:cornflowerblue" id="realname">
+
                                         </p> <small>学生 <cite>在线</cite></small>
                                     </blockquote>
                                 </div>
@@ -161,32 +179,32 @@
                                 <br/>
                                 <div class="span6">
                                     <fieldset class="form-inline">
-                                        <form action="/ssm/updataUser" method="post">
-                                            <input type="hidden" name="id" value="${user.getId()}"><!--隐藏域，可以查询到所有数据但是不显示-->
+                                        <form action="/changemsg" method="post">
+                                            <input type="hidden" name="id" ><!--隐藏域，可以查询到所有数据但是不显示-->
 
                                             <div class="form-group">
-                                                <label for="username">姓名:  </label>
-                                                <input type="text" name="name" class="form-control" value="${user.getName()}" id="username" required>
+                                                <label for="prealname">姓名:  </label>
+                                                <input type="text" name="realname" class="form-control"  id="prealname" required>
                                             </div>  <br/>
                                             <div class="form-group">
-                                                <label for="user2pwd">性别:  </label>
-                                                <input type="text" name="password" class="form-control" value="${user.getPassword()}" id="user2pwd"  required>
+                                                <label for="psex">性别:  </label>
+                                                <input type="text" name="sex" class="form-control"  id="psex"  required>
                                             </div>  <br/>
                                             <div class="form-group">
-                                                <label for="1">密码:  </label>
-                                                <input type="text" name="password" class="form-control" value="${user.getPassword()}" id="1"  required>
+                                                <label for="ppassword">密码:  </label>
+                                                <input type="text" name="password" class="form-control"  id="ppassword"  required>
                                             </div>  <br/>
                                             <div class="form-group">
-                                                <label for="2">电话:  </label>
-                                                <input type="text" name="password" class="form-control" value="${user.getPassword()}" id="2"  required>
+                                                <label for="ptel">电话:  </label>
+                                                <input type="text" name="tel" class="form-control"  id="ptel"  required>
                                             </div>  <br/>
                                             <div class="form-group">
-                                                <label for="3">班级：</label>
-                                                <input type="text" name="password" class="form-control" value="${user.getPassword()}" id="3"  required>
+                                                <label for="pclassname">班级：</label>
+                                                <input type="text" name="classname" class="form-control"  id="pclassname"  required>
                                             </div>  <br/>
                                             <div class="form-group">
-                                                <label for="4">学院：</label>
-                                                <input type="text" name="password" class="form-control" value="${user.getPassword()}" id="4"  required>
+                                                <label for="pyuanxi">学院：</label>
+                                                <input type="text" name="yuanxi" class="form-control"  id="pyuanxi"  required>
                                             </div>  <br/>
                                             <button type="submit" class="btn btn-default">Submit</button>
                                         </form>

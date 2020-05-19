@@ -10,6 +10,20 @@
 <head>
     <title>Title</title>
     <link href="https://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajax({
+                url:"/appiont/myap",
+                success:function (data) {
+                    $("#num").html(data.num)
+                    $("#realname").html(data.realname)
+                    $("#floor").html(data.classname)
+                    $("#seatnum").html(data.seatnum)
+                }
+                })
+        })
+    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -94,22 +108,22 @@
         <div class="span2">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                    <a href="#">首页</a>
+                    <a href="/jsp/index.jsp">首页</a>
                 </li>
                 <li>
                     <a href="#"></a>
                 </li>
                 <li>
-                    <a href="#">预约中心</a>
+                    <a href="/jsp/appoint.jsp">预约中心</a>
                 </li>
                 <li>
-                    <a href="#">我的预约</a>
+                    <a href="myappoint.jsp">我的预约</a>
                 </li>
                 <li>
-                    <a href="#">消息</a>
+                    <a href="/message.jsp">消息</a>
                 </li>
                 <li>
-                    <a href="#">资料</a>
+                    <a href="/jsp/pmessage.jsp">资料</a>
                 </li>
                 <li>
                     <a href="#">留言板</a>
@@ -135,15 +149,15 @@
                         </div>
                         <div class="span9">
                             <blockquote>
-                                <small>学号 <cite>开源</cite></small>
-                                <p style="font-weight: 900;color:cornflowerblue">
-                                    16114284
+                                <small>学号 <cite></cite></small>
+                                <p style="font-weight: 900;color:cornflowerblue" id="num">
+
                                 </p>
                             </blockquote>
                             <blockquote>
                                 <small>姓名 <cite></cite></small>
-                                <p style="font-weight: 900;color:cornflowerblue">
-                                    付浩
+                                <p style="font-weight: 900;color:cornflowerblue" id="realname">
+
                                 </p>
                             </blockquote>
                         </div>
@@ -157,21 +171,21 @@
                         <div class="span6">
                             <blockquote>
                                 <small>楼层 <cite></cite></small>
-                                <p style="font-weight: 900;color:seagreen">
-                                    三层
+                                <p style="font-weight: 900;color:seagreen" id="floor">
+
                                 </p>
                             </blockquote>
                             <blockquote>
                                 <small>座位号 <cite></cite></small>
-                                <p style="font-weight: 900;color:seagreen">
-                                   2EA001
+                                <p style="font-weight: 900;color:seagreen" id="seatnum">
+
                                 </p>
                             </blockquote>
                             <br/>
                             <div class="row-fluid">
                                 <div class="span12">
-                                    <button class="btn btn-success btn-large btn-block" type="button">重新预约</button><br/>
-                                    <button class="btn btn-warning btn-large btn-block" type="button">离开</button>
+                                    <button class="btn btn-success btn-large btn-block" type="button" onclick="window.location.href='/reappoint'">重新预约</button><br/>
+                                    <button class="btn btn-warning btn-large btn-block" type="button" onclick="window.location.href='/quitSystem'">离开</button>
                                 </div>
                             </div>
                         </div>

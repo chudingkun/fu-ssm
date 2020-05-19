@@ -8,11 +8,13 @@
     </settings>
     <typeAliases>
         <typeAlias type="com.fuhao.pojo.Student" alias="student"/>
+        <typeAlias type="com.fuhao.pojo.Seat" alias="seat"/>
     </typeAliases>
 
     <mappers>
         <mapper resource="com/fuhao/dao/UserMapper.xml"/>
         <mapper resource="com/fuhao/dao/MessageMapper.xml"/>
         <mapper resource="com/fuhao/dao/AppointMapper.xml"/>
+        <mapper resource="com/fuhao/dao/QuitMapper.xml"/>
     </mappers>
 </configuration>

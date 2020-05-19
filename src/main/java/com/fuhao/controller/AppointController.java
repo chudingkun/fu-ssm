@@ -1,11 +1,14 @@
 package com.fuhao.controller;
 
 import com.fuhao.pojo.Seat;
+import com.fuhao.pojo.Student;
 import com.fuhao.service.AppointService;
+import com.fuhao.service.UserService;
 import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpRequest;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +24,9 @@ public class AppointController {
     @Autowired
     @Qualifier("AppointServiceImpl")
     private AppointService appointService;
-
+    @Autowired
+    @Qualifier("UserServiceImpl")
+    private UserService userService;
     //展示座位
     @RequestMapping("/show/seat")
     public List<Seat>  appoint2(){
@@ -69,18 +74,33 @@ public class AppointController {
         return seatList;
     }
 
-
-    //预约请求
-    @RequestMapping("/myappoint/ap")
-    public String appointseat(String seatnum, HttpServletRequest request, HttpServletResponse response){
-        HttpSession session =request.getSession();
-        String num= (String) session.getAttribute("num");
-        Map map =new HashMap();
-        map.put("num",num);
-        map.put("seat",seatnum);
-        appointService.seatappoint(map);
-
-        return "redirect:/jsp/appoint.jsp";
-
+    //个人预约信息
+    @RequestMapping("/appiont/myap")
+    public Student myap01(Model model, HttpServletRequest request, HttpServletResponse response){
+        String num= (String) request.getSession().getAttribute("num");
+        Student student = userService.myap(num);
+        String seatnum= student.getSeatnum();
+        String floor=seatnum.substring(0,1);
+        student.setClassname(floor);
+        System.out.println(student);//这里classname 属性暂存 floor
+        return student;
     }
+
+    //查询修改个人信息
+    @RequestMapping("/show/pmsg")
+    public Student pmsg(HttpServletRequest request,HttpServletResponse response){
+        String num = (String) request.getSession().getAttribute("num");
+        Student student=userService.pmeg(num);
+        System.out.println(student);
+        return student;
+    }
+
+    //修改个人信息   未完成，
+    @RequestMapping("/changemsg")
+    public String changemsg(Student student,HttpServletRequest request,HttpServletResponse response){
+        String num = (String) request.getSession().getAttribute("num");
+        return "";
+    }
+
+
 }

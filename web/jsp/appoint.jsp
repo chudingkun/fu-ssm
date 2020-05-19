@@ -233,7 +233,7 @@
                             <a href="/jsp/appoint.jsp">预约中心</a>
                         </li>
                         <li>
-                            <a href="#">我的预约</a>
+                            <a href="/myappoint.jsp">我的预约</a>
                         </li>
                         <li>
                             <a href="#">资料</a>

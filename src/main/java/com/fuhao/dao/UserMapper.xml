@@ -3,7 +3,24 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fuhao.dao.UserMapper">
+
     <select id="login" parameterType="student" resultType="student">
         select * from libseatmanage.student where num=#{num} and password=#{password}
     </select>
+
+    <select id="myap" parameterType="String" resultType="student">
+        select num,realname,seatnum from libseatmanage.student where num=#{num}
+    </select>
+
+    <select id="myseat" parameterType="String" resultType="seat">
+        select floor from libseatmanage.libseat  where num=#{num}
+    </select>
+
+    <select id="pmeg" parameterType="String" resultType="student">
+        select * from libseatmanage.student where num=#{num};
+    </select>
+
+    <update id="updatmsg" >
+        update libseatmanage.student set
+    </update>
 </mapper>

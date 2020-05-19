@@ -1,6 +1,7 @@
 package com.fuhao.service;
 
 import com.fuhao.dao.UserMapper;
+import com.fuhao.pojo.Seat;
 import com.fuhao.pojo.Student;
 
 import java.util.List;
@@ -18,4 +19,21 @@ public class UserServiceImpl implements UserService {
     public Student login(Student student) {
         return userMapper.login(student);
     }
+
+    public Student myap(String num) {
+        return userMapper.myap(num);
+    }
+
+    public Seat myseat(String num) {
+        return userMapper.myseat(num);
+    }
+
+    public Student updatmsg(Student student, String num) {
+        return userMapper.updatmsg(student,num);
+    }
+
+    public Student pmeg(String num) {
+        return userMapper.pmeg(num);
+    }
+
 }
