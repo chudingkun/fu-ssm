@@ -18,7 +18,7 @@ public interface UserMapper {
 
     int updatamsg(Student student);
 
-    int checkroot(Root root);
+    Root checkroot(Root root);
 
 
 }

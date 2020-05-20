@@ -111,7 +111,7 @@
                 <div class="span2">
                     <ul class="nav nav-list well">
                         <li class="nav-header">
-                            <a href="/jsp/index.jsp">首页</a>
+                            <a href="/ssm/rlogin">首页</a>
                         </li>
                         <li>
                             <a href="/jsp/appoint.jsp">预约中心</a>

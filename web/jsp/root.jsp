@@ -18,7 +18,7 @@
             $.ajax({
                 url: "/root/showstudent",
                 success: function (data) {
-
+                    var html = "";
                     console.log(data);
                     for (var i = 0; i < data.length; i++) {
                         html += " <tr class=\"success\">" +
@@ -28,13 +28,14 @@
                             "<td>" + data[i].tel+ "</td>" +
                             "<td>" + data[i].seatnum+ "</td>" +
                             "<td>" + "<a href=\"/root/stuchange?num="+ data[i].num + "\">修改</a>/" +
-                                    "<a href=\"/root/studelete?num="+ data[i].num + "\">删除</a>" +
+                                    "<a href=\"/root/studelete?num="+ data[i].num + "\">删除</a>/" +
+                                     "<a href=\"/root/studelete?num="+ data[i].num + "\">清空</a>" +
                             "</td>"
                     }
                     $("#stulist").html(html);
                 }
             })
-            $("#seatlist").click(function () {
+            $("#seatlist520").click(function () {
                 $.ajax({
                     url: "/root/showseat",
                     success: function (data) {
@@ -54,8 +55,8 @@
                                 "<td>" + data[i].wz + "</td>" +
                                 "<td>" + data[i].temp+ "</td>" +
                                 "<td>" + data[i].num+ "</td>" +
-                                "<td>" + "<a href=\"/root/stuchange?seatnum="+ data[i].seatnum + "\">修改</a>/" +
-                                "<a href=\"/root/studelete?seatnum="+ data[i].seatnum + "\">删除</a>" +
+                                "<td>" + "<a href=\"/root/seatchange?seatnum="+ data[i].seatnum + "\">修改</a>/" +
+                                "<a href=\"/root/seatdelete?seatnum="+ data[i].seatnum + "\">删除</a>" +
                                 "</td>"
                         }
                         $("#list-head").html(html1);
@@ -63,9 +64,56 @@
                     }
                 })
             })
+            $("#gonggaoList").click(function () {
+                $.ajax({
+                    url: "/root/showmessage",
+                    success: function (data) {
+                        var html1 = "<tr>\n" +
+                            "                    <th>内容</th>\n" +
+                            "                    <th>日期</th>\n" +
+                            "                </tr>";
+                        var html = "";
+                        console.log(data);
+                        for (var i = 0; i < data.length; i++) {
+                            html += " <tr class=\"success\">" +
+                                "<td>" + data[i].messagetext + "</td>" +
+                                "<td>" + data[i].messagetime + "</td>" +
 
+                                "<td>" + "<a href=\"/root/messagechange?messagetext="+ data[i].messagetext + "\">修改</a>/" +
+                                "<a href=\"/root/messagedelete?messagetext="+ data[i].messagetext + "\">删除</a>" +
+                                "</td>"
+                        }
+                        $("#list-head").html(html1);
+                        $("#stulist").html(html);
+                    }
+                })
+            })
+            $("#newslist").click(function () {
+                $.ajax({
+                    url: "/root/shownews",
+                    success: function (data) {
+                        var html1 = "<tr>\n" +
+                            "                    <th>内容</th>\n" +
+                            "                    <th>来源</th>\n" +
+                            "                    <th>时间</th>\n" +
+                            "                </tr>";
+                        var html = "";
+                        console.log(data);
+                        for (var i = 0; i < data.length; i++) {
+                            html += " <tr class=\"success\">" +
+                                "<td>" + data[i].newss + "</td>" +
+                                "<td>" + data[i].origin + "</td>" +
+                                "<td>" + data[i].time + "</td>" +
 
-
+                                "<td>" + "<a href=\"/root/newschange?newss="+ data[i].newss + "\">修改</a>/" +
+                                "<a href=\"/root/newsdelete?newss="+ data[i].newss + "\">删除</a>" +
+                                "</td>"
+                        }
+                        $("#list-head").html(html1);
+                        $("#stulist").html(html);
+                    }
+                })
+            })
         })
 
     </script>
@@ -157,13 +205,13 @@
                 </li>
 
                 <li>
-                    <a id="seatlist">座位表</a>
+                    <a id="seatlist520">座位表</a>
                 </li>
                 <li>
-                    <a href="#">添加公告</a>
+                    <a  id="gonggaoList">添加公告</a>
                 </li>
                 <li>
-                    <a href="#">添加新闻</a>
+                    <a  id="newslist">添加新闻</a>
                 </li>
                 <li>
                     <a href="#">其他</a>

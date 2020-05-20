@@ -73,6 +73,9 @@
     <bean id="RootServiceImpl" class="com.fuhao.service.RootServiceImpl">
         <property name="rootMapper" ref="rootMapper"/>
     </bean>
+    <bean id="RootSetServiceImpl" class="com.fuhao.service.RootSetServiceImpl">
+        <property name="rootSetMapper" ref="rootSetMapper"/>
+    </bean>
 
 
     <!-- 配置事务管理器 -->

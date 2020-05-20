@@ -1,12 +1,12 @@
 package com.fuhao.pojo;
 
 public class News {
-    private String news;
+    private String newss;
     private String origin;
     private String time;
 
-    public News(String news, String origin, String time) {
-        this.news = news;
+    public News(String newss, String origin, String time) {
+        this.newss = newss;
         this.origin = origin;
         this.time = time;
     }
@@ -15,18 +15,18 @@ public class News {
     @Override
     public String toString() {
         return "News{" +
-                "news='" + news + '\'' +
+                "news='" + newss + '\'' +
                 ", origin='" + origin + '\'' +
                 ", time='" + time + '\'' +
                 '}';
     }
 
-    public String getNews() {
-        return news;
+    public String getNewss() {
+        return newss;
     }
 
     public void setNews(String news) {
-        this.news = news;
+        this.newss = news;
     }
 
     public String getOrigin() {

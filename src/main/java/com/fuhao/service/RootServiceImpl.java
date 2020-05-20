@@ -1,8 +1,7 @@
 package com.fuhao.service;
 
 import com.fuhao.dao.RootMapper;
-import com.fuhao.pojo.Seat;
-import com.fuhao.pojo.Student;
+import com.fuhao.pojo.*;
 
 import java.util.List;
 
@@ -19,5 +18,21 @@ public class RootServiceImpl implements RootService{
 
     public List<Seat> getSeatList() {
         return rootMapper.getSeatList();
+    }
+
+    public List<Message> getMessageList() {
+        return rootMapper.getMessageList();
+    }
+
+    public List<News> getNewsList() {
+        return rootMapper.getNewsList();
+    }
+
+    public Student getStudent(String num) {
+        return rootMapper.getStudent(num);
+    }
+
+    public int updatastu(Pstudent  pstudent) {
+        return rootMapper.updatastu(pstudent);
     }
 }

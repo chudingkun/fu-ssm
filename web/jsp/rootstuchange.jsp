@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: fuhao666
-  Date: 2020-05-19
-  Time: 6:01
+  Date: 2020-05-21
+  Time: 3:13
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,18 +11,9 @@
     <title>Title</title>
     <link href="https://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $.ajax({
-                url:"/appiont/myap",
-                success:function (data) {
-                    $("#num").html(data.num)
-                    $("#realname").html(data.realname)
-                    $("#floor").html(data.classname)
-                    $("#seatnum").html(data.seatnum)
-                }
-                })
-        })
+    <script  type="text/javascript">
+
+
     </script>
 </head>
 <body>
@@ -108,25 +99,16 @@
         <div class="span2">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                    <a href="/ssm/rlogin">首页</a>
+                    <a href="#">学生表</a>
                 </li>
                 <li>
-                    <a href="#"></a>
+                    <a href="#">座位表</a>
                 </li>
                 <li>
-                    <a href="/jsp/appoint.jsp">预约中心</a>
+                    <a href="#">添加公告</a>
                 </li>
                 <li>
-                    <a href="myappoint.jsp">我的预约</a>
-                </li>
-                <li>
-                    <a href="/message.jsp">消息</a>
-                </li>
-                <li>
-                    <a href="/jsp/pmessage.jsp">资料</a>
-                </li>
-                <li>
-                    <a href="#">留言板</a>
+                    <a href="#">添加新闻</a>
                 </li>
                 <li>
                     <a href="#">设置</a>
@@ -142,60 +124,27 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="row-fluid">
-                        <div class="span1">
+                        <div class="span4">
                         </div>
-                        <div class="span2">
-                            <img alt="140x140" src="img/fh.gif" class="img-circle" />
-                        </div>
-                        <div class="span9">
+                        <div class="span4">
                             <blockquote>
-                                <small>学号 <cite></cite></small>
+                                学号:
                                 <p style="font-weight: 900;color:cornflowerblue" id="num">
-
-                                </p>
+                                    ${student.getNum()}
+                                </p> <small> <cite></cite></small>
                             </blockquote>
-                            <blockquote>
-                                <small>姓名 <cite></cite></small>
-                                <p style="font-weight: 900;color:cornflowerblue" id="realname">
+                            <form action="/root/tostuchange" method="post">
 
-                                </p>
-                            </blockquote>
-                        </div>
-                    </div>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <div class="row-fluid">
-                        <div class="span3">
-                        </div>
-                        <div class="span6">
-                            <blockquote>
-                                <small>楼层 <cite></cite></small>
-                                <p style="font-weight: 900;color:seagreen" id="floor">
-
-                                </p>
-                            </blockquote>
-                            <blockquote>
-                                <small>座位号 <cite></cite></small>
-                                <p style="font-weight: 900;color:seagreen" id="seatnum">
-
-                                </p>
-                            </blockquote>
-                            <br/>
-                            <div class="row-fluid">
-                                <div class="span12">
-                                    <button class="btn btn-success btn-large btn-block" type="button" onclick="window.location.href='/reappoint'">重新预约</button><br/>
-                                    <button class="btn btn-warning btn-large btn-block" type="button" onclick="window.location.href='/quitSystem'">离开</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span3">
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="span4">
-                        </div>
-                        <div class="span4">
+                                <div class="form-group">
+                                    <label for="ppassword">密码:  </label>
+                                    <input type="password" name="password" class="form-control"  id="ppassword" value="${student.getPassword()}" required>
+                                </div>  <br/>
+                                <div class="form-group">
+                                    <label for="ppassword"></label>
+                                    <input type="hidden" name="num" class="form-control"  id="ppassword2" value="${student.getNum()}" required>
+                                </div>  <br/>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
                         </div>
                         <div class="span4">
                         </div>
@@ -205,5 +154,7 @@
         </div>
     </div>
 </div>
+
+
 </body>
 </html>

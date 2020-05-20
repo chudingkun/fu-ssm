@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fuhao.dao.RootSetMapper">
+    <delete id="deletestu">
+        delete from libseatmanage.student where num=#{num};
+    </delete>
+    <delete id="deleteseat">
+        delete from libseatmanage.libseat where seatnum=#{seatnum}
+    </delete>
+    <delete id="deletmsg">
+        delete from libseatmanage.message where messagetext=#{messagetext}
+    </delete>
+    <delete id="deletenews">
+        delete from libseatmanage.news where newss=#{news}
+    </delete>
+</mapper>

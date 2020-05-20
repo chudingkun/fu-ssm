@@ -90,7 +90,7 @@
             <ul class="nav nav-list">
               <li class="nav-header">
                 <p>
-                  <strong><a href="/jsp/index.jsp">首页</a></strong>
+                  <strong><a href="/ssm/rlogin">首页</a></strong>
                 </p>
               </li>
               <li>
@@ -180,7 +180,7 @@
                 <c:forEach var="newslist"  items="${newslist}">
                   <tr>
                     <td><a href=" ">>>></a></td>
-                    <td><a href=" ">${newslist.getNews()}</a></td>
+                    <td><a href=" ">${newslist.getNewss()}</a></td>
                     <td><a href=" ">${newslist.getOrigin()}</a></td>
                     <td><a href=" ">${newslist.getTime()}</a></td>
                   </tr>

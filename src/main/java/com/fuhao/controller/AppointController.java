@@ -76,12 +76,15 @@ public class AppointController {
 
     //个人预约信息
     @RequestMapping("/appiont/myap")
-    public Student myap01(Model model, HttpServletRequest request, HttpServletResponse response){
+    public Student myap01(HttpServletRequest request, HttpServletResponse response){
         String num= (String) request.getSession().getAttribute("num");
+        System.out.println("--!!!!!!!!!!!!!!!!!!1-----"+num+"---!!!!!!!!!!!!!!!!!!!!!!-");
         Student student = userService.myap(num);
-        String seatnum= student.getSeatnum();
-        String floor=seatnum.substring(0,1);
+        String floor="提示：当前未预约！";
+        if(student.getSeatnum()!=null){String seatnum= student.getSeatnum();floor=seatnum.substring(0,1); }
+
         student.setClassname(floor);
+        System.out.println("--!!!!!!!!!!!!!!!!!!1-----"+floor+"---!!!!!!!!!!!!!!!!!!!!!!-");
         System.out.println(student);//这里classname 属性暂存 floor
         return student;
     }

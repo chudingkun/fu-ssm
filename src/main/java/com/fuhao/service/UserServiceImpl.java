@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.updatamsg(student);
     }
 
-    public int checkroot(Root root) {
+    public Root checkroot(Root root) {
         return userMapper.checkroot(root);
     }
 

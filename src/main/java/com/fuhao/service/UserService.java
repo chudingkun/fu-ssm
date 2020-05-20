@@ -13,5 +13,5 @@ public interface UserService {
     Seat myseat(String num);
     Student pmeg(String num);
     int updatamsg(Student student);
-    int checkroot(Root root);
+    Root checkroot(Root root);
 }

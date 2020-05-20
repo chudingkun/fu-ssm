@@ -9,6 +9,10 @@
     <typeAliases>
         <typeAlias type="com.fuhao.pojo.Student" alias="student"/>
         <typeAlias type="com.fuhao.pojo.Seat" alias="seat"/>
+        <typeAlias type="com.fuhao.pojo.Root" alias="root"/>
+        <typeAlias type="com.fuhao.pojo.Teacher" alias="teacher"/>
+        <typeAlias type="com.fuhao.pojo.Message" alias="message"/>
+        <typeAlias type="com.fuhao.pojo.News" alias="news"/>
     </typeAliases>
 
     <mappers>
@@ -16,5 +20,6 @@
         <mapper resource="com/fuhao/dao/MessageMapper.xml"/>
         <mapper resource="com/fuhao/dao/AppointMapper.xml"/>
         <mapper resource="com/fuhao/dao/QuitMapper.xml"/>
+        <mapper resource="com/fuhao/dao/RootMapper.xml"/>
     </mappers>
 </configuration>

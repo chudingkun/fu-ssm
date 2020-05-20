@@ -9,4 +9,16 @@
     <select id="getSeatList" resultType="seat">
         select * from libseatmanage.libseat
     </select>
+    <select id="getMessageList" resultType="message" >
+        select * from libseatmanage.message;
+    </select>
+    <select id="getNewsList" resultType="news" >
+        select * from libseatmanage.news;
+    </select>
+    <select id="getStudent" resultType="student">
+        select * from libseatmanage.student where num=#{num} ;
+    </select>
+    <update id="updatastu" parameterType="com.fuhao.pojo.Pstudent">
+        update libseatmanage.student set password=#{password} where num=#{num};
+    </update>
 </mapper>
