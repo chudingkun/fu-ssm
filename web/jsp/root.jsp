@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: fuhao666
@@ -11,8 +12,61 @@
     <title>Title</title>
 
     <link href="https://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-1.x.js"/>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
     <script  type="text/javascript">
+        $(document).ready(function() {
+            $.ajax({
+                url: "/root/showstudent",
+                success: function (data) {
+
+                    console.log(data);
+                    for (var i = 0; i < data.length; i++) {
+                        html += " <tr class=\"success\">" +
+                            "<td>" + data[i].num + "</td>" +
+                            "<td>" + data[i].realname + "</td>" +
+                            "<td>" + data[i].password + "</td>" +
+                            "<td>" + data[i].tel+ "</td>" +
+                            "<td>" + data[i].seatnum+ "</td>" +
+                            "<td>" + "<a href=\"/root/stuchange?num="+ data[i].num + "\">修改</a>/" +
+                                    "<a href=\"/root/studelete?num="+ data[i].num + "\">删除</a>" +
+                            "</td>"
+                    }
+                    $("#stulist").html(html);
+                }
+            })
+            $("#seatlist").click(function () {
+                $.ajax({
+                    url: "/root/showseat",
+                    success: function (data) {
+                        var html1 = "<tr>\n" +
+                            "                    <th>楼层</th>\n" +
+                            "                    <th>座位号</th>\n" +
+                            "                    <th>位置</th>\n" +
+                            "                    <th>状态</th>\n" +
+                            "                    <th>学号</th>\n" +
+                            "                </tr>";
+                        var html = "";
+                        console.log(data);
+                        for (var i = 0; i < data.length; i++) {
+                            html += " <tr class=\"success\">" +
+                                "<td>" + data[i].floor + "</td>" +
+                                "<td>" + data[i].seatnum + "</td>" +
+                                "<td>" + data[i].wz + "</td>" +
+                                "<td>" + data[i].temp+ "</td>" +
+                                "<td>" + data[i].num+ "</td>" +
+                                "<td>" + "<a href=\"/root/stuchange?seatnum="+ data[i].seatnum + "\">修改</a>/" +
+                                "<a href=\"/root/studelete?seatnum="+ data[i].seatnum + "\">删除</a>" +
+                                "</td>"
+                        }
+                        $("#list-head").html(html1);
+                        $("#stulist").html(html);
+                    }
+                })
+            })
+
+
+
+        })
 
     </script>
 </head>
@@ -99,13 +153,11 @@
         <div class="span2">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                    <a href="#">学生表</a>
+                    <a href="/jsp/root.jsp">学生表</a>
                 </li>
+
                 <li>
-                    <a href="#">教师表</a>
-                </li>
-                <li>
-                    <a href="#">座位表</a>
+                    <a id="seatlist">座位表</a>
                 </li>
                 <li>
                     <a href="#">添加公告</a>
@@ -125,93 +177,17 @@
         </div>
         <div class="span10">
             <table class="table">
-                <thead>
+                <thead id="list-head">
                 <tr>
-                    <th>
-                        编号
-                    </th>
-                    <th>
-                        产品
-                    </th>
-                    <th>
-                        交付时间
-                    </th>
-                    <th>
-                        状态
-                    </th>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>密码</th>
+                    <th>电话</th>
+                    <th>座位</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Default
-                    </td>
-                </tr>
-                <tr class="success">
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        01/04/2012
-                    </td>
-                    <td>
-                        Approved
-                    </td>
-                </tr>
-                <tr class="error">
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        02/04/2012
-                    </td>
-                    <td>
-                        Declined
-                    </td>
-                </tr>
-                <tr class="warning">
-                    <td>
-                        3
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        03/04/2012
-                    </td>
-                    <td>
-                        Pending
-                    </td>
-                </tr>
-                <tr class="info">
-                    <td>
-                        4
-                    </td>
-                    <td>
-                        TB - Monthly
-                    </td>
-                    <td>
-                        04/04/2012
-                    </td>
-                    <td>
-                        Call in to confirm
-                    </td>
-                </tr>
+                <tbody id="stulist">
+
                 </tbody>
             </table>
             <div class="pagination pagination-centered">

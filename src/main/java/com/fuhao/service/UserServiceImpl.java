@@ -1,6 +1,7 @@
 package com.fuhao.service;
 
 import com.fuhao.dao.UserMapper;
+import com.fuhao.pojo.Root;
 import com.fuhao.pojo.Seat;
 import com.fuhao.pojo.Student;
 
@@ -30,6 +31,10 @@ public class UserServiceImpl implements UserService {
 
     public int updatamsg(Student student) {
         return userMapper.updatamsg(student);
+    }
+
+    public int checkroot(Root root) {
+        return userMapper.checkroot(root);
     }
 
     public Student pmeg(String num) {

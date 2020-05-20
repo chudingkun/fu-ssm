@@ -1,5 +1,6 @@
 package com.fuhao.dao;
 
+import com.fuhao.pojo.Root;
 import com.fuhao.pojo.Seat;
 import com.fuhao.pojo.Student;
 
@@ -16,4 +17,8 @@ public interface UserMapper {
     Student pmeg(String num);
 
     int updatamsg(Student student);
+
+    int checkroot(Root root);
+
+
 }

@@ -70,7 +70,9 @@
     <bean id="QuitServiceImpl" class="com.fuhao.service.QuitServiceImpl">
         <property name="quitMapper" ref="quitMapper"/>
     </bean>
-
+    <bean id="RootServiceImpl" class="com.fuhao.service.RootServiceImpl">
+        <property name="rootMapper" ref="rootMapper"/>
+    </bean>
 
 
     <!-- 配置事务管理器 -->

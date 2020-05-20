@@ -23,4 +23,8 @@
     <update id="updatamsg">
         update libseatmanage.student set password=#{password},realname=#{realname},sex=#{sex},tel=#{tel},classname=#{classname},yuanxi=#{yuanxi} where num=#{num}
     </update>
+
+    <select id="checkroot" parameterType="com.fuhao.pojo.Root" >
+        select * from libseatmanage.root where name=#{name} and  password=#{password}
+    </select>
 </mapper>

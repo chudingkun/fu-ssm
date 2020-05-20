@@ -38,7 +38,7 @@
                                 <div class="form-group">
                                     <input id="login-password" type="password" name="password" required data-msg="请输入密码" placeholder="密码" class="input-material">
                                 </div>
-                                <button id="login" type="submit" class="btn btn-primary">登录</button>
+                                <button id="login" type="submit" class="btn btn-primary">登录</button><span style="color: red">${errormsg}</span>
                                 <div style="margin-top: -40px;">
                                     <!-- <input type="checkbox"  id="check1"/>&nbsp;<span>记住密码</span>
                                     <input type="checkbox" id="check2"/>&nbsp;<span>自动登录</span> -->
