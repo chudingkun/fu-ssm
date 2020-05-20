@@ -95,12 +95,4 @@ public class AppointController {
         return student;
     }
 
-    //修改个人信息   未完成，
-    @RequestMapping("/changemsg")
-    public String changemsg(Student student,HttpServletRequest request,HttpServletResponse response){
-        String num = (String) request.getSession().getAttribute("num");
-        return "";
-    }
-
-
 }

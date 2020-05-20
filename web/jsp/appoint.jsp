@@ -236,7 +236,7 @@
                             <a href="/myappoint.jsp">我的预约</a>
                         </li>
                         <li>
-                            <a href="#">资料</a>
+                            <a href="/jsp/pmessage.jsp">资料</a>
                         </li>
                         <li>
                             <a href="#">消息</a>

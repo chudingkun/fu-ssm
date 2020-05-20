@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
         return userMapper.myseat(num);
     }
 
-    public Student updatmsg(Student student, String num) {
-        return userMapper.updatmsg(student,num);
+    public int updatamsg(Student student) {
+        return userMapper.updatamsg(student);
     }
 
     public Student pmeg(String num) {

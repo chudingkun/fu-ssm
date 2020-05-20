@@ -16,13 +16,15 @@
             $.ajax({
                 url:"/show/pmsg",
                 success:function (data) {
-                    $("#num").val(data.num)
-                    $("#realname").val(data.realname)
+                    $("#num").html(data.num)
+                    var name=data.realname;
+                    $("#realname").html(data.realname)
+                    $("#realname2").val(name)
                     $("#ppassword").val(data.password)
                     $("#psex").val(data.sex)
                     $("#ptel").val(data.tel)
                     $("#pclassname").val(data.classname)
-                    $("#pyuanxi").val(data.yunaxi)
+                    $("#pyuanxi").val(data.yuanxi)
                 }
             })
         })
@@ -180,11 +182,9 @@
                                 <div class="span6">
                                     <fieldset class="form-inline">
                                         <form action="/changemsg" method="post">
-                                            <input type="hidden" name="id" ><!--隐藏域，可以查询到所有数据但是不显示-->
-
                                             <div class="form-group">
-                                                <label for="prealname">姓名:  </label>
-                                                <input type="text" name="realname" class="form-control"  id="prealname" required>
+                                                <label for="prealname2">姓名:  </label>
+                                                <input type="text" name="realname" class="form-control"  id="prealname2" required>
                                             </div>  <br/>
                                             <div class="form-group">
                                                 <label for="psex">性别:  </label>
@@ -192,7 +192,7 @@
                                             </div>  <br/>
                                             <div class="form-group">
                                                 <label for="ppassword">密码:  </label>
-                                                <input type="text" name="password" class="form-control"  id="ppassword"  required>
+                                                <input type="password" name="password" class="form-control"  id="ppassword"  required>
                                             </div>  <br/>
                                             <div class="form-group">
                                                 <label for="ptel">电话:  </label>

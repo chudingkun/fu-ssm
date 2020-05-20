@@ -15,5 +15,5 @@ public interface UserMapper {
 
     Student pmeg(String num);
 
-    Student updatmsg(Student student,String num);
+    int updatamsg(Student student);
 }

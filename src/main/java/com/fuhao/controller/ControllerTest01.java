@@ -49,7 +49,6 @@ public class ControllerTest01 {
         model.addAttribute("newslist",newsList);
         model.addAttribute("teachers",teachers);//jstL 登陆显示数据
 
-        System.out.println(userService.login(student).getNum()+"--------------");
         if(userService.login(student)!=null){
             session.setAttribute("num",userService.login(student).getNum());
             session.setAttribute("realname",userService.login(student).getRealname());
@@ -94,6 +93,13 @@ public class ControllerTest01 {
         request.getSession().invalidate();
         return "redirect:/Login.jsp";
     }
-
+    //修改个人信息   未完成，
+    @RequestMapping("/changemsg")
+    public String changemsg(Student student,HttpServletRequest request,HttpServletResponse response){
+        String num = (String) request.getSession().getAttribute("num");
+        student.setNum(num);
+        userService.updatamsg(student);
+        return "redirect:/jsp/pmessage.jsp";
+    }
 
 }

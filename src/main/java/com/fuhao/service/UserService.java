@@ -11,5 +11,5 @@ public interface UserService {
     Student myap(String num);
     Seat myseat(String num);
     Student pmeg(String num);
-    Student updatmsg(Student student,String num);
+    int updatamsg(Student student);
 }

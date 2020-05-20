@@ -20,7 +20,7 @@
         select * from libseatmanage.student where num=#{num};
     </select>
 
-    <update id="updatmsg" >
-        update libseatmanage.student set
+    <update id="updatamsg">
+        update libseatmanage.student set password=#{password},realname=#{realname},sex=#{sex},tel=#{tel},classname=#{classname},yuanxi=#{yuanxi} where num=#{num}
     </update>
 </mapper>
