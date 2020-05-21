@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: fuhao666
   Date: 2020-05-21
-  Time: 10:58
+  Time: 13:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -100,7 +100,7 @@
         <div class="span2">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                    <a href="/jsp/root.jsp">学生表</a>
+                    <a href="/jsp/root.jsp">主页</a>
                 </li>
                 <li>
                     <a href="/jsp/root.jsp">座位表</a>
@@ -117,7 +117,7 @@
                 <li class="divider">
                 </li>
                 <li>
-                    <a href="#">帮助</a>
+                    <a href="/jsp/root.jsp">帮助</a>
                 </li>
             </ul>
         </div>
@@ -134,14 +134,18 @@
 
                                 </p> <small> <cite></cite></small>
                             </blockquote>
-                            <form action="/root/addstuchange" method="post">
+                            <form action="/root/addseatchange" method="post">
                                 <div class="form-group">
-                                    <label for="newnum">学号:  </label>
-                                    <input type="text" name="num" class="form-control"  id="newnum" value=" " required>
+                                    <label for="floor">楼层：  </label>
+                                    <input type="text" name="floor" class="form-control"  id="floor" value=" " required>
                                 </div>  <br/>
                                 <div class="form-group">
-                                    <label for="ppassword">密码:  </label>
-                                    <input type="password" name="password" class="form-control"  id="ppassword" value="" required>
+                                    <label for="wz">位置：  </label>
+                                    <input type="text" name="wz" class="form-control"  id="wz" value="" required>
+                                </div>  <br/>
+                                <div class="form-group">
+                                    <label for="seatnum">座位号:  </label>
+                                    <input type="text" name="seatnum" class="form-control"  id="seatnum" value="" required>
                                 </div>  <br/>
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </form>

@@ -15,10 +15,46 @@
     <select id="getNewsList" resultType="news" >
         select * from libseatmanage.news;
     </select>
+
+
     <select id="getStudent" resultType="student">
         select * from libseatmanage.student where num=#{num} ;
     </select>
     <update id="updatastu" parameterType="com.fuhao.pojo.Pstudent">
         update libseatmanage.student set password=#{password} where num=#{num};
     </update>
+    <insert id="insertstu" parameterType="com.fuhao.pojo.Nstudent">
+       insert into libseatmanage.student (num,password) values (#{num},#{password})
+    </insert>
+
+
+    <select id="getSeat" resultType="seat" >
+        select * from libseatmanage.libseat where seatnum=#{seatnum}
+    </select>
+    <update id="updataseat" parameterType="com.fuhao.pojo.Pseat">
+        update libseatmanage.libseat set floor=#{floor} ,wz=#{wz} where seatnum=#{seatnum}
+    </update>
+    <insert id="insertseat" parameterType="com.fuhao.pojo.Pseat">
+       insert into libseatmanage.libseat (floor,wz,seatnum) values (#{floor},#{wz},#{seatnum})
+    </insert>
+
+    <select id="getMessage" parameterType="String" resultType="message">
+        select * from libseatmanage.message where messagetext=#{messagetext}
+    </select>
+    <update id="updatamsg"  parameterType="message">
+        update libseatmanage.message set messagetext=#{messagetext},messagetime=#{messagetime} where messagetext=#{messagetext}
+    </update>
+    <insert id="insertmsg"  parameterType="message">
+        insert into libseatmanage.message (messagetext, messagetime) values (#{messagetext},#{messagetime})
+    </insert>
+
+    <select id="getNews" parameterType="String" resultType="news">
+        select * from libseatmanage.news where newss=#{newss}
+    </select>
+    <update id="updatanews" parameterType="news">
+        update libseatmanage.news set newss=#{newss},origin=#{origin},time=#{time} where newss=#{newss}
+    </update>
+    <insert id="insertnews" parameterType="news">
+        insert into libseatmanage.news (newss, origin, "time") values (#{newss},#{origin},#{time})
+    </insert>
 </mapper>

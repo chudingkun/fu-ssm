@@ -29,7 +29,7 @@
                             "<td>" + data[i].seatnum+ "</td>" +
                             "<td>" + "<a href=\"/root/stuchange?num="+ data[i].num + "\">修改</a>/" +
                                     "<a href=\"/root/studelete?num="+ data[i].num + "\">删除</a>/" +
-                                     "<a href=\"/root/studelete?num="+ data[i].num + "\">清空</a>" +
+                                     "<a href=\"/root/stuclear?num="+ data[i].num + "\">清空</a>" +
                             "</td>"
                     }
                     $("#stulist").html(html);
@@ -45,6 +45,7 @@
                             "                    <th>位置</th>\n" +
                             "                    <th>状态</th>\n" +
                             "                    <th>学号</th>\n" +
+                            " <th><a href=\"/jsp/rootseatadd.jsp\">增加座位</a></th>" +
                             "                </tr>";
                         var html = "";
                         console.log(data);
@@ -56,7 +57,8 @@
                                 "<td>" + data[i].temp+ "</td>" +
                                 "<td>" + data[i].num+ "</td>" +
                                 "<td>" + "<a href=\"/root/seatchange?seatnum="+ data[i].seatnum + "\">修改</a>/" +
-                                "<a href=\"/root/seatdelete?seatnum="+ data[i].seatnum + "\">删除</a>" +
+                                "<a href=\"/root/seatdelete?seatnum="+ data[i].seatnum + "\">删除</a>/" +
+                                "<a href=\"/root/seatclear?seatnum="+ data[i].seatnum + "\">清空位置</a>" +
                                 "</td>"
                         }
                         $("#list-head").html(html1);
@@ -71,6 +73,7 @@
                         var html1 = "<tr>\n" +
                             "                    <th>内容</th>\n" +
                             "                    <th>日期</th>\n" +
+                                "<th><a href=\"/jsp/rootmsgadd.jsp\">新增</a></th>"
                             "                </tr>";
                         var html = "";
                         console.log(data);
@@ -79,7 +82,7 @@
                                 "<td>" + data[i].messagetext + "</td>" +
                                 "<td>" + data[i].messagetime + "</td>" +
 
-                                "<td>" + "<a href=\"/root/messagechange?messagetext="+ data[i].messagetext + "\">修改</a>/" +
+                                "<td>" + "<a href=\"/root/msgchange?messagetext="+ data[i].messagetext + "\">修改</a>/" +
                                 "<a href=\"/root/messagedelete?messagetext="+ data[i].messagetext + "\">删除</a>" +
                                 "</td>"
                         }
@@ -96,6 +99,7 @@
                             "                    <th>内容</th>\n" +
                             "                    <th>来源</th>\n" +
                             "                    <th>时间</th>\n" +
+                                "<th><a href=\"/jsp/rootnewsadd.jsp\">新增</a></th>"
                             "                </tr>";
                         var html = "";
                         console.log(data);
@@ -232,6 +236,7 @@
                     <th>密码</th>
                     <th>电话</th>
                     <th>座位</th>
+                    <th><a href="/jsp/rootstuadd.jsp">增加用户</a></th>
                 </tr>
                 </thead>
                 <tbody id="stulist">

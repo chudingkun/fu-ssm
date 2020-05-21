@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: fuhao666
-  Date: 2020-05-21
-  Time: 10:58
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -131,18 +123,20 @@
                             <blockquote>
 
                                 <p style="font-weight: 900;color:cornflowerblue" id="num">
-
+                                    公告！
                                 </p> <small> <cite></cite></small>
                             </blockquote>
-                            <form action="/root/addstuchange" method="post">
+                            <form action="/root/addmsgtchange" method="post">
+
                                 <div class="form-group">
-                                    <label for="newnum">学号:  </label>
-                                    <input type="text" name="num" class="form-control"  id="newnum" value=" " required>
+                                    <label for="nfloor">内容： </label>
+                                    <textarea type="text" name="messagetext" class="form-control"  style="width: 60%;height: 10%" id="nfloor"  required></textarea>
                                 </div>  <br/>
                                 <div class="form-group">
-                                    <label for="ppassword">密码:  </label>
-                                    <input type="password" name="password" class="form-control"  id="ppassword" value="" required>
-                                </div>  <br/>
+                                    <label for="weizhi">时间：</label>
+                                    <input type="text" name="messagetome" class="form-control"  id="weizhi" required>
+                                </div><br/>
+
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </form>
                         </div>
@@ -154,7 +148,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

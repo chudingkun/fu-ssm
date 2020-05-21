@@ -99,19 +99,19 @@
         <div class="span2">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                    <a href="#">学生表</a>
+                    <a href="/jsp/root.jsp">学生表</a>
                 </li>
                 <li>
-                    <a href="#">座位表</a>
+                    <a href="/jsp/root.jsp">座位表</a>
                 </li>
                 <li>
-                    <a href="#">添加公告</a>
+                    <a href="/jsp/root.jsp">添加公告</a>
                 </li>
                 <li>
-                    <a href="#">添加新闻</a>
+                    <a href="/jsp/root.jsp">添加新闻</a>
                 </li>
                 <li>
-                    <a href="#">设置</a>
+                    <a href="/jsp/root.jsp">设置</a>
                 </li>
                 <li class="divider">
                 </li>
@@ -128,20 +128,24 @@
                         </div>
                         <div class="span4">
                             <blockquote>
-                                学号:
+                                座位号:
                                 <p style="font-weight: 900;color:cornflowerblue" id="num">
-                                    ${student.getNum()}
+                                    ${seat.getSeatnum()}
                                 </p> <small> <cite></cite></small>
                             </blockquote>
-                            <form action="/root/tostuchange" method="post">
+                            <form action="/root/toseatchange" method="post">
 
                                 <div class="form-group">
-                                    <label for="ppassword">密码:  </label>
-                                    <input type="password" name="password" class="form-control"  id="ppassword" value="${student.getPassword()}" required>
+                                    <label for="nfloor">楼层:  </label>
+                                    <input type="text" name="floor" class="form-control"  id="nfloor" value="${seat.getFloor()}" required>
                                 </div>  <br/>
                                 <div class="form-group">
-                                    <label for="ppassword"></label>
-                                    <input type="hidden" name="num" class="form-control"  id="ppassword2" value="${student.getNum()}" required>
+                                    <label for="weizhi">位置：</label>
+                                    <input type="text" name="wz" class="form-control"  id="weizhi" value="${seat.getWz()}" required>
+                                </div>  <br/>
+                                <div class="form-group">
+                                    <label for="seatnum"></label>
+                                    <input type="hidden" name="seatnum" class="form-control"  id="seatnum" value="${seat.getSeatnum()}" required>
                                 </div>  <br/>
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </form>
